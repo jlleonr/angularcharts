@@ -1,0 +1,25 @@
+<div class="test-content">
+  <button class="btn" [disabled]="!allowNewServer" (click)="onCreateServer()">
+    <i class="fas fa-tv"></i> Create Server
+  </button>
+  <!-- <p [innerText]="allowNewServer" style="color: gainsboro"></p> -->
+
+  <!-- One way data binding -->
+  <!-- <p>{{serverCreationStatus}}</p> -->
+
+  <!-- *ngIf-else directive -->
+  <p *ngIf="clicked && oneWayServerName!=''; else noServer">Server was created, server name is: {{oneWayServerName}} </p>
+  <ng-template #noServer>
+    <p>No server has been created!</p>
+  </ng-template>
+  <!-- Event data binding -->
+  <label>Server Name:</label>
+  <!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)">
+    <p>{{serverName}}</p> -->
+
+  <input type="text" class="form-control" [(ngModel)]="serverName">
+  <p> --> {{serverName}} </p>
+  <p *ngFor="let server of servers" [ngClass]="{'offline': serverStatus === 'offline', 'online': serverStatus === 'online'}">
+     Server {{server}} status: <span [ngStyle]="{color: getColor()}">{{serverStatus}}</span> 
+  </p>
+</div>

@@ -1,0 +1,21 @@
+<nav>
+  <ul class="topnav">
+    <li>
+      <a routerLink="/home" routerLinkActive="active-link" (mouseover)='goTo("/home");'>
+        <i class="fas fa-home"></i>Home </a>
+    </li>
+    <li>
+      <a routerLink="/charts" routerLinkActive="active-link" (mouseover)='goTo("/charts");' (mouseout)='cancelGoTo();'>
+        <i class="fas fa-chart-bar"></i>Charts</a>
+    </li>
+    <li>
+      <a routerLink="/options" routerLinkActive="active-link" (mouseover)='goTo("/options");' (mouseout)='cancelGoTo();'>
+        <i class="fas fa-edit"></i>Options</a>
+    </li>
+    <li class="topnav-right">
+      <a routerLink="/signin" routerLinkActive="active-link" (mouseover)='goTo("/signin");' (mouseout)='cancelGoTo();'>Sign In
+        <i class="fas fa-sign-in-alt"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
